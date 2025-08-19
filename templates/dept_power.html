@@ -1,0 +1,37 @@
+<! DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>权限管理</title>
+    <link rel="stylesheet" href="/static/index.css">
+    <link rel="stylesheet" href="/static/card.css">
+</head>
+<body>
+    <div class="card">
+        <div class="card1">
+            <h1>权限管理</h1>
+        </div>
+        <form action="/dept_power" method="post">
+            <label for="dept_id">选择部门：</label>
+            <select name="dept_id" id="dept_id">
+                {% for dept in depts %}
+                <option value="{{ dept.id }}">{{ dept.name }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">查询</button>
+        </form>
+        {% if selected_dept %}
+        <h2>部门：{{ selected_dept.indept}}</h2>
+        <ul>
+            {% for power in powers %}
+            <li>{{ power }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <a class="main-btn" href="/">返回</a>
+    </div>
+
+</body>
+</html>

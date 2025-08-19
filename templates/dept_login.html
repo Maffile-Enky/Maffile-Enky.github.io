@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+    <h2>登录</h2>
+    {% if error %}
+    <p style="color:red;">{{ error }}</p>
+    {% endif %}
+    <form action="/dept_login" method="post">
+        <label for="name">用户名：</label>
+        <input type="text" id="name" name="username" required>
+        <br><br>
+        <label for="password">密码：</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        <button type="submit">登录</button>
+        <a href="/">返回</a>
+    </form>
+</body>
+</html>

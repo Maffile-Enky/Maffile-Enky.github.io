@@ -1,0 +1,53 @@
+<! DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人员管理</title>
+    <link rel="stylesheet" href="../static/card.css" />
+    <link rel="stylesheet" href="../static/index.css" />
+
+
+</head>
+
+<body>
+    <div class="card">
+        <div class="card1">
+            <div style=" max-height: 234px; overflow-y: auto; border: 1px solid #ccc;z-index:3">
+                <table border="1" style="width: 100%; border-collapse: collapse; color: aliceblue; text-align: center;">
+                    <thead style="position: sticky; top: 0; background: #333; z-index: 10;">
+                        <tr>
+                            <th style="width: 10%;">序列</th>
+                            <th style="width: 20%;">ID</th>
+                            <th style="width: 35%;">名称</th>
+                            <th style="width: 35%;">Indept</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for dept in depts %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ dept.id }}</td>
+                            <td>{{ dept.name }}</td>
+                            <td>{{ dept.indept }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+
+            <di style="z-index:4;margin-left:10px">
+                <a href="/" >返回</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>名字查询工具</title>
+    <link rel="stylesheet" href="/static/input.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+        p{
+            padding: 1.25rem 1.5rem 1rem 1.5rem;
+            margin-top: 20px;
+        }
+
+        .form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+          
+            
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form method="GET" action="/dept_info">
+            <div class="form-group">
+                <div class="input-container">
+                    <input type="text" class="input" name="Num" placeholder="这里是输入框" required>
+                    <label class="label" for="input">请输入要查询人员的编号</label>
+
+                    <div class="topline"</div>
+                    <div class="underline"></div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit">
+                    查询
+                    <div class="arrow-wrapper">
+                        <div class="arrow"></div>
+                    </div>
+
+                </button>
+                {% if num %}
+                <p>查询结果: {{ num.name }}</p>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <a href="/">返回首页</a>
+        </form>
+    </div>
+</body>
+</html>
